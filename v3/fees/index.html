@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    {{> head}}
+  </head>
+  <body class="min-h-screen bg-charcoal font-sans text-offwhite antialiased">
+    {{> header}}
+
+    <main id="main">
+      <section class="section" aria-labelledby="fees-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Transparent Fees</p>
+            <h1 id="fees-title" class="section-title">Florida-compliant pricing, quoted before we move.</h1>
+            <p class="section-lede">
+              Florida law caps notarial fees; travel is agreed in advance. No surprises — your full quote
+              is confirmed in writing before your appointment.
+            </p>
+            <div class="mt-7"><a href="/#booking" class="btn btn-gold btn-sm">Book a signing</a></div>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="fee-card reveal" data-reveal>
+              <h2 class="fee-card-title">Standard Notarial Acts</h2>
+              <p class="fee-card-note">Maximum allowable under Florida law.</p>
+              <ul class="fee-list">
+                <li><span>Acknowledgments</span><span class="fee-amt">$10<span class="fee-unit">/sig</span></span></li>
+                <li><span>Jurats (oaths / affirmations)</span><span class="fee-amt">$10<span class="fee-unit">/sig</span></span></li>
+                <li><span>Protests</span><span class="fee-amt">$10<span class="fee-unit">/sig</span></span></li>
+                <li><span>Copy certification</span><span class="fee-amt">$10<span class="fee-unit">/copy</span></span></li>
+                <li><span>VIN verification</span><span class="fee-amt">$10</span></li>
+                <li><span>Marriage solemnization</span><span class="fee-amt">$30<span class="fee-unit">min</span></span></li>
+              </ul>
+            </div>
+
+            <div class="fee-card fee-card-feature reveal" data-reveal>
+              <h2 class="fee-card-title">Travel &amp; Distance</h2>
+              <p class="fee-card-note">By distance zone, agreed in advance.</p>
+              <ul class="fee-list">
+                <li><span>Zone 1 · 0–10 mi</span><span class="fee-amt">$15</span></li>
+                <li><span>Zone 2 · 10–20 mi</span><span class="fee-amt">$25</span></li>
+                <li><span>Zone 3 · 20–30 mi</span><span class="fee-amt">$40</span></li>
+                <li><span>Zone 4 · 30+ mi</span><span class="fee-amt">$50+</span></li>
+              </ul>
+            </div>
+
+            <div class="fee-card reveal" data-reveal>
+              <h2 class="fee-card-title">Traffic Multiplier</h2>
+              <p class="fee-card-note">South Florida traffic can multiply drive time.</p>
+              <ul class="fee-list">
+                <li><span>Off-peak · 9a–3:30p wkdays</span><span class="fee-amt fee-amt-free">1×</span></li>
+                <li><span>Rush hour · 7–9a &amp; 3:30–7p</span><span class="fee-amt">1.5×</span></li>
+                <li><span>Event / holiday · Art Basel, etc.</span><span class="fee-amt">2×</span></li>
+              </ul>
+              <p class="fee-card-fine">Travel fee = distance-zone rate × traffic multiplier.</p>
+            </div>
+
+            <div class="fee-card reveal" data-reveal>
+              <h2 class="fee-card-title">After-Hours &amp; Overnight</h2>
+              <p class="fee-card-note">Added on top of standard notarial fees.</p>
+              <ul class="fee-list">
+                <li><span>Standard · 8a–5p Mon–Fri</span><span class="fee-amt fee-amt-free">No fee</span></li>
+                <li><span>Evening · 5p–9p</span><span class="fee-amt">+$25</span></li>
+                <li><span>Late night · 9p–12a</span><span class="fee-amt">+$50</span></li>
+                <li><span>Overnight · 12a–8a</span><span class="fee-amt">+$100</span></li>
+              </ul>
+            </div>
+
+            <div class="fee-card reveal" data-reveal>
+              <h2 class="fee-card-title">Weekend &amp; Holiday</h2>
+              <p class="fee-card-note">Per appointment; stacks with time-of-day fees.</p>
+              <ul class="fee-list">
+                <li><span>Weekend · Sat &amp; Sun</span><span class="fee-amt">+$50</span></li>
+                <li><span>Federal &amp; state holidays</span><span class="fee-amt">+$100</span></li>
+              </ul>
+            </div>
+
+            <div class="fee-card reveal" data-reveal>
+              <h2 class="fee-card-title">Additional Services</h2>
+              <p class="fee-card-note">Quoted to scope, up front.</p>
+              <ul class="fee-list">
+                <li><span>Wedding officiant</span><span class="fee-amt">$30+</span></li>
+                <li><span>Loan / closing signings</span><span class="fee-amt">Quote</span></li>
+                <li><span>Bulk &amp; recurring business</span><span class="fee-amt">Quote</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="fee-note-box reveal" data-reveal>
+            <strong class="text-offwhite">How travel fees work:</strong> your total travel fee = distance-zone rate ×
+            traffic multiplier, calculated from our location to yours. A 15-mile trip at noon can take 50+ minutes in I-95
+            or US-1 rush hour, so timing matters. Travel, after-hours, weekend, and holiday charges are always quoted and
+            confirmed in writing <span class="text-offwhite-muted">before</span> your appointment — never a surprise.
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" aria-labelledby="fees-cta">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="rounded-3xl border border-gold/25 bg-gold/[0.05] p-10 text-center reveal" data-reveal>
+            <h2 id="fees-cta" class="font-display text-2xl font-semibold text-offwhite sm:text-3xl">Get a transparent quote.</h2>
+            <p class="mx-auto mt-3 max-w-prose text-offwhite-muted">Tell us the document, the place, and the time — we'll confirm your total before we move.</p>
+            <div class="mt-7 flex flex-wrap justify-center gap-4">
+              <a href="/#booking" class="btn btn-gold">Book a Signing</a>
+              <a href="tel:+17866340070" class="btn btn-outline">(786) 634-0070</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

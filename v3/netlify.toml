@@ -1,0 +1,33 @@
+# Netlify deploy configuration for SoFlo Elite Notary (v3).
+# Security headers live in public/_headers (the authoritative source). The
+# entries below cover build settings and a defense-in-depth header layer for
+# hosts that read netlify.toml. Keep CSP in ONE place (public/_headers) to
+# avoid conflicting policies.
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback — every path serves the single entry document.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Baseline headers (CSP intentionally omitted here; see public/_headers).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

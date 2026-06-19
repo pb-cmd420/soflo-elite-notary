@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    {{> head}}
+  </head>
+  <body class="min-h-screen bg-charcoal font-sans text-offwhite antialiased">
+    {{> header}}
+
+    <main id="main">
+      <section class="section" aria-labelledby="areas-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Service Area</p>
+            <h1 id="areas-title" class="section-title">Mobile across South Florida — we come to you.</h1>
+            <p class="section-lede">
+              Home, office, hospital, title company, or closing table. We cover Miami-Dade and Broward
+              counties, including the communities below.
+            </p>
+            <div class="mt-7"><a href="/#booking" class="btn btn-gold btn-sm">Book a signing</a></div>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-2">
+            <div class="area-card reveal" data-reveal>
+              <div class="flex items-center gap-3">
+                <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0 1 14 0c0 5.2-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+                <h2 class="font-display text-xl font-semibold text-offwhite">Miami-Dade County</h2>
+              </div>
+              <div class="area-tags">
+                <span class="area-tag">Miami</span><span class="area-tag">Miami Beach</span><span class="area-tag">Coral Gables</span><span class="area-tag">Hialeah</span><span class="area-tag">Doral</span><span class="area-tag">Kendall</span><span class="area-tag">Aventura</span><span class="area-tag">Homestead</span><span class="area-tag">Miami Gardens</span><span class="area-tag">Cutler Bay</span><span class="area-tag">Key Biscayne</span><span class="area-tag">South Miami</span><span class="area-tag">Pinecrest</span><span class="area-tag">North Miami</span><span class="area-tag">Opa-locka</span>
+              </div>
+            </div>
+
+            <div class="area-card reveal" data-reveal>
+              <div class="flex items-center gap-3">
+                <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0 1 14 0c0 5.2-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+                <h2 class="font-display text-xl font-semibold text-offwhite">Broward County</h2>
+              </div>
+              <div class="area-tags">
+                <span class="area-tag">Fort Lauderdale</span><span class="area-tag">Hollywood</span><span class="area-tag">Pembroke Pines</span><span class="area-tag">Davie</span><span class="area-tag">Weston</span><span class="area-tag">Plantation</span><span class="area-tag">Sunrise</span><span class="area-tag">Coral Springs</span><span class="area-tag">Pompano Beach</span><span class="area-tag">Deerfield Beach</span><span class="area-tag">Miramar</span><span class="area-tag">Hallandale Beach</span><span class="area-tag">Cooper City</span><span class="area-tag">Tamarac</span><span class="area-tag">Lauderdale Lakes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fee-note-box reveal" data-reveal>
+            <strong class="text-offwhite">Don't see your city?</strong> If you're in or near Miami-Dade or Broward, just
+            ask — we very likely cover you. Travel is quoted by distance zone and confirmed before your appointment, so
+            you always know the total in advance.
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" aria-labelledby="areas-cta">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="rounded-3xl border border-gold/25 bg-gold/[0.05] p-10 text-center reveal" data-reveal>
+            <h2 id="areas-cta" class="font-display text-2xl font-semibold text-offwhite sm:text-3xl">We'll come to you.</h2>
+            <p class="mx-auto mt-3 max-w-prose text-offwhite-muted">Same-day mobile appointments often available across South Florida.</p>
+            <div class="mt-7 flex flex-wrap justify-center gap-4">
+              <a href="/#booking" class="btn btn-gold">Book a Signing</a>
+              <a href="tel:+17866340070" class="btn btn-outline">(786) 634-0070</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

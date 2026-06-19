@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    {{> head}}
+  </head>
+  <body class="min-h-screen bg-charcoal font-sans text-offwhite antialiased">
+    {{> header}}
+
+    <main id="main">
+      <section class="section" aria-labelledby="about-title">
+        <div class="mx-auto grid w-full max-w-content items-start gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div class="reveal" data-reveal>
+            <div class="founder-frame">
+              <img src="/founder.jpg" alt="Pedro &quot;Pete&quot; Quintero, founder of SoFlo Elite Notary &amp; Business Services" width="440" height="440" loading="eager" decoding="async" class="founder-img" />
+            </div>
+            <div class="founder-sign-badge">
+              <span class="font-mono text-xs text-offwhite-dim">Commission</span>
+              <span class="font-mono text-sm text-gold-200">HH392574 · exp. 04/30/2027</span>
+            </div>
+          </div>
+
+          <div class="reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>About &amp; Founder</p>
+            <h1 id="about-title" class="section-title">Meet Pedro <span class="text-gold-300">“Pete”</span> Quintero.</h1>
+            <p class="mt-5 max-w-prose text-lg leading-relaxed text-offwhite-muted">
+              My name is Pedro Quintero — most people know me as <strong class="text-offwhite">Pete</strong>. For more than
+              <strong class="text-offwhite">19 years</strong> I built my career in banking, helping individuals, families,
+              and business owners navigate important financial decisions. For over
+              <strong class="text-offwhite">seven of those years</strong> I served as a notary public, witnessing and
+              notarizing thousands of documents that carried significant legal and financial weight.
+            </p>
+            <p class="mt-4 max-w-prose leading-relaxed text-offwhite-muted">
+              Being a notary is far more than applying a stamp and signature. It requires attention to detail, a thorough
+              understanding of how documents must be executed, and a commitment to handling every signing professionally
+              and correctly. Over the years I worked with mortgage closings, HELOCs, refinance packages, business loan
+              agreements, powers of attorney, affidavits, and trust documents — firsthand experience in accuracy,
+              compliance, confidentiality, and service.
+            </p>
+            <p class="mt-4 max-w-prose leading-relaxed text-offwhite-muted">
+              I founded SoFlo Elite Notary &amp; Business Services LLC because I saw how often people are left searching for
+              someone who understands not just the notarization process, but the significance of the documents being
+              signed. My banking background gives me a perspective many notaries simply don't have — and it's the standard
+              I bring to your door.
+            </p>
+
+            <blockquote class="founder-quote">“When it comes to important documents, experience matters.”</blockquote>
+
+            <div class="mt-7">
+              <p class="font-display text-lg text-offwhite">Pedro “Pete” Quintero</p>
+              <p class="text-sm text-offwhite-dim">Founder &amp; Managing Member</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" aria-labelledby="creds-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Credentials</p>
+            <h2 id="creds-title" class="section-title">Commissioned, bonded, and qualified.</h2>
+          </div>
+          <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>Fully commissioned Florida Notary Public</strong></p></li>
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>Commission #HH392574</strong> · expires April 30, 2027</p></li>
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>$7,500 surety bond</strong> as required by Florida law</p></li>
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>Completed mandatory Florida notary education</strong></p></li>
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>Licensed to solemnize marriages</strong> in Florida</p></li>
+            <li class="legal-block reveal" data-reveal><p class="text-offwhite"><strong>19+ years banking · 7+ years notary</strong></p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="mission-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Our Mission</p>
+            <h2 id="mission-title" class="section-title">Dependable, professional, precise.</h2>
+            <p class="section-lede">
+              To provide dependable, professional, and convenient notary and business services while treating every client
+              with integrity, respect, and attention to detail. Whether you're signing real estate documents, business
+              agreements, powers of attorney, or personal legal documents, your paperwork is handled by someone with years
+              of experience in both banking and notarization.
+            </p>
+          </div>
+          <div class="mt-8 reveal" data-reveal>
+            <a href="/#booking" class="btn btn-gold">Schedule with Pete</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

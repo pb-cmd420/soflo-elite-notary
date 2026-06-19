@@ -1,0 +1,48 @@
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Atmosphere: fixed grain + vault gradient (decorative) -->
+<div class="pointer-events-none fixed inset-0 -z-10 bg-vault-radial" aria-hidden="true"></div>
+<div class="grain pointer-events-none fixed inset-0 -z-10" aria-hidden="true"></div>
+
+<header id="top">
+  <nav class="site-nav" aria-label="Primary">
+    <div class="mx-auto flex w-full max-w-content items-center justify-between gap-4 px-5 py-3 sm:px-8">
+      <a href="/" class="group flex items-center gap-3" aria-label="SoFlo Elite Notary — home">
+        <span class="logo-coin h-11 w-11">
+          <img src="/hero-logo.png" alt="SoFlo Elite Notary &amp; Business Services seal" width="44" height="44" />
+        </span>
+        <span class="leading-none">
+          <span class="block font-display text-lg font-semibold tracking-tight text-offwhite">SoFlo <span class="text-gold-300">Elite</span> Notary</span>
+          <span class="block text-[0.62rem] uppercase tracking-label text-offwhite-dim">Business Services</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-7 lg:flex">
+        <a href="/services/" class="nav-link {{#if (eq page 'services')}}is-active{{/if}}">Services</a>
+        <a href="/fees/" class="nav-link {{#if (eq page 'fees')}}is-active{{/if}}">Fees</a>
+        <a href="/service-areas/" class="nav-link {{#if (eq page 'areas')}}is-active{{/if}}">Service Area</a>
+        <a href="/faq/" class="nav-link {{#if (eq page 'faq')}}is-active{{/if}}">FAQ</a>
+        <a href="/about/" class="nav-link {{#if (eq page 'about')}}is-active{{/if}}">About</a>
+        <a href="/#booking" class="btn btn-gold btn-sm">
+          Book a Signing
+          <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle lg:hidden" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden" data-mobile-menu hidden>
+      <div class="mx-auto flex max-w-content flex-col gap-1 px-5 pb-5 pt-1 sm:px-8">
+        <a href="/services/" class="mobile-link" data-mobile-link>Services</a>
+        <a href="/fees/" class="mobile-link" data-mobile-link>Fees</a>
+        <a href="/service-areas/" class="mobile-link" data-mobile-link>Service Area</a>
+        <a href="/faq/" class="mobile-link" data-mobile-link>FAQ</a>
+        <a href="/about/" class="mobile-link" data-mobile-link>About</a>
+        <a href="/#booking" class="btn btn-gold mt-2 w-full justify-center" data-mobile-link>Book a Signing</a>
+      </div>
+    </div>
+  </nav>
+</header>

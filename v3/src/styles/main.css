@@ -1,0 +1,693 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  :root {
+    --grain-opacity: 0.05;
+    --nav-h: 4.25rem;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-padding-top: calc(var(--nav-h) + 1rem);
+  }
+
+  body {
+    background-color: #1e1e1e;
+    background-image:
+      radial-gradient(120% 90% at 85% -10%, rgba(184, 150, 62, 0.10) 0%, rgba(30, 30, 30, 0) 42%),
+      radial-gradient(90% 80% at -10% 110%, rgba(139, 26, 43, 0.10) 0%, rgba(30, 30, 30, 0) 50%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(184, 150, 62, 0.32);
+    color: #fcfaf7;
+  }
+
+  /* Visible, on-brand focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid #d4b45f;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  /* Custom scrollbar (progressive enhancement) */
+  @supports (scrollbar-color: auto) {
+    html {
+      scrollbar-color: #5e4b1d #1a1a1a;
+    }
+  }
+}
+
+/* =========================================================================
+   ATMOSPHERE
+   ========================================================================= */
+@layer base {
+  .grain {
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* =========================================================================
+   COMPONENTS
+   ========================================================================= */
+@layer components {
+  .skip-link {
+    @apply absolute left-4 top-3 z-[100] -translate-y-24 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-charcoal transition focus:translate-y-0;
+  }
+
+  /* ---- Navigation ---- */
+  .site-nav {
+    @apply sticky top-0 z-50 border-b border-white/5 transition-colors duration-300;
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+  }
+  .site-nav.is-scrolled {
+    background: rgba(18, 18, 18, 0.85);
+    border-bottom-color: rgba(184, 150, 62, 0.22);
+  }
+
+  .nav-mark {
+    @apply grid h-10 w-10 place-items-center rounded-full border border-gold/30 bg-gold/5 text-gold-300 transition-colors;
+  }
+  .group:hover .nav-mark {
+    @apply border-gold/60 text-gold-200;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-offwhite-muted transition-colors hover:text-offwhite;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1.5 left-0 h-px w-0 bg-gold-300 transition-all duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    @apply w-full;
+  }
+  .nav-link.is-active {
+    @apply text-offwhite;
+  }
+
+  .nav-toggle {
+    @apply grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-offwhite transition hover:border-gold/40 hover:text-gold-200;
+  }
+
+  .mobile-menu {
+    @apply border-t border-white/5;
+    background: rgba(16, 16, 16, 0.96);
+  }
+  .mobile-link {
+    @apply rounded-lg px-3 py-3 text-base font-medium text-offwhite-muted transition hover:bg-white/5 hover:text-offwhite;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply relative inline-flex select-none items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 focus-visible:outline-offset-4;
+  }
+  .btn-sm {
+    @apply px-5 py-2.5 text-[0.82rem];
+  }
+  .btn-block {
+    @apply w-full;
+  }
+
+  .btn-gold {
+    @apply text-charcoal shadow-gold-glow;
+    background-image: linear-gradient(135deg, #9c7e31 0%, #d4b45f 45%, #b8963e 100%);
+  }
+  .btn-gold:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 0 0 1px rgba(184, 150, 62, 0.5), 0 28px 60px -24px rgba(184, 150, 62, 0.6);
+  }
+  /* sheen sweep */
+  .btn-gold::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+    transform: translateX(-130%) skewX(-18deg);
+  }
+  .btn-gold:hover::after {
+    animation: sheen 0.9s ease;
+  }
+
+  .btn-outline {
+    @apply border border-gold/40 bg-gold/5 text-gold-200 hover:border-gold/70 hover:bg-gold/10 hover:text-gold-100;
+  }
+
+  .btn-crimson {
+    @apply text-offwhite;
+    background-image: linear-gradient(135deg, #731522 0%, #8b1a2b 55%, #a83144 100%);
+    box-shadow: 0 18px 44px -22px rgba(139, 26, 43, 0.75);
+  }
+  .btn-crimson:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 24px 54px -22px rgba(139, 26, 43, 0.9);
+  }
+
+  .icon-sm {
+    @apply h-[1.1em] w-[1.1em] shrink-0;
+  }
+
+  /* ---- Eyebrow / section heads ---- */
+  .eyebrow {
+    @apply flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-label text-gold-300;
+  }
+  .eyebrow-line {
+    @apply inline-block h-px w-10 bg-gradient-to-r from-gold-500 to-transparent;
+  }
+
+  .section {
+    @apply relative border-t border-white/5 py-20 sm:py-28;
+  }
+  .section-alt {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  .section-head {
+    @apply max-w-3xl;
+  }
+  .section-title {
+    @apply mt-5 font-display text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-tight tracking-tight text-offwhite;
+  }
+  .section-lede {
+    @apply mt-5 max-w-prose text-lg leading-relaxed text-offwhite-muted;
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(120deg, #d4b45f 0%, #f1e5c2 50%, #b8963e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .link-gold {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300 transition-colors hover:text-gold-200;
+  }
+  .link-gold-inline {
+    @apply text-gold-300 underline decoration-gold/40 underline-offset-2 transition hover:text-gold-200 hover:decoration-gold;
+  }
+
+  /* ---- Hero stats ---- */
+  .stat {
+    @apply bg-charcoal-900/60 px-5 py-4;
+  }
+  .stat-label {
+    @apply text-[0.66rem] font-semibold uppercase tracking-label text-offwhite-dim;
+  }
+  .stat-value {
+    @apply mt-1 font-display text-3xl font-semibold tabular-nums text-offwhite;
+  }
+  .stat-unit {
+    @apply ml-1 text-sm font-sans font-medium text-gold-300;
+  }
+
+  /* ---- Seal ---- */
+  .seal-wrap {
+    @apply relative mx-auto aspect-square w-full max-w-sm;
+  }
+  .seal-glow {
+    @apply pointer-events-none absolute inset-0 -z-10 mx-auto aspect-square w-[88%] rounded-full blur-3xl;
+    background: radial-gradient(circle, rgba(184, 150, 62, 0.28) 0%, rgba(184, 150, 62, 0) 68%);
+    top: 6%;
+  }
+  .seal-spin {
+    @apply animate-[seal-rotate_80s_linear_infinite];
+    transform-origin: center;
+    filter: drop-shadow(0 14px 40px rgba(184, 150, 62, 0.35));
+  }
+  .seal-legend {
+    fill: #e3cd8e;
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .seal-core {
+    @apply absolute inset-0 m-auto grid h-28 w-28 place-content-center justify-items-center gap-1 rounded-full;
+  }
+  .seal-core-text {
+    @apply font-mono text-[0.6rem] uppercase tracking-[0.2em] text-gold-200;
+  }
+
+  .credential-card {
+    @apply mx-auto mt-6 max-w-xs rounded-2xl border border-white/10 bg-charcoal-900/70 p-5 backdrop-blur;
+    box-shadow: var(--tw-shadow, 0 24px 60px -30px rgba(0, 0, 0, 0.8));
+  }
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-wider text-gold-200;
+  }
+  .badge-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-gold-300;
+    box-shadow: 0 0 0 3px rgba(184, 150, 62, 0.25);
+  }
+
+  /* ---- Trust strip ---- */
+  .trust-strip {
+    @apply border-y border-white/5 bg-charcoal-900/50;
+  }
+  .trust-pill {
+    @apply inline-flex items-center gap-2 font-medium text-offwhite-muted;
+  }
+
+  /* ---- Compare (problem vs solution) ---- */
+  .compare {
+    @apply rounded-3xl border p-7 sm:p-9;
+  }
+  .compare-risk {
+    @apply border-crimson-500/25 bg-crimson-500/[0.06];
+  }
+  .compare-solution {
+    @apply border-gold/25 bg-gold/[0.05];
+  }
+  .compare-head {
+    @apply mb-6 flex items-center justify-between;
+  }
+  .compare-tag {
+    @apply inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider;
+  }
+  .compare-tag-risk {
+    @apply bg-crimson-500/15 text-crimson-400;
+  }
+  .compare-tag-solution {
+    @apply bg-gold/15 text-gold-200;
+  }
+  .compare-list {
+    @apply space-y-4;
+  }
+  .compare-list li {
+    @apply flex gap-3 text-[0.97rem] leading-relaxed text-offwhite-muted;
+  }
+  .compare-x {
+    @apply mt-0.5 h-5 w-5 shrink-0 text-crimson-400;
+  }
+  .compare-check {
+    @apply mt-0.5 h-5 w-5 shrink-0 text-gold-300;
+  }
+
+  /* ---- Service cards ---- */
+  .svc-card {
+    @apply flex flex-col rounded-2xl border border-white/10 bg-charcoal-800/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/35 hover:shadow-vault focus-within:border-gold/35;
+  }
+  .svc-icon {
+    @apply mb-5 grid h-12 w-12 place-items-center rounded-xl border border-gold/25 bg-gold/10 text-gold-300;
+  }
+  .svc-icon svg {
+    @apply h-6 w-6;
+  }
+  .svc-title {
+    @apply font-display text-xl font-semibold text-offwhite;
+  }
+  .svc-desc {
+    @apply mt-2 text-sm leading-relaxed text-offwhite-muted;
+  }
+  .svc-detail {
+    @apply mt-0 grid max-h-0 gap-1.5 overflow-hidden text-sm text-offwhite-dim opacity-0 transition-all duration-500;
+  }
+  .svc-detail li {
+    @apply flex items-center gap-2 before:inline-block before:h-1 before:w-1 before:rounded-full before:bg-gold-400;
+  }
+  .svc-card:hover .svc-detail,
+  .svc-card:focus-within .svc-detail {
+    @apply mt-5 max-h-60 opacity-100;
+  }
+  .svc-card-cta {
+    @apply border-gold/30 bg-gradient-to-br from-gold/[0.08] to-crimson-500/[0.05];
+  }
+
+  /* ---- Process steps ---- */
+  .step {
+    @apply relative rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
+  }
+  .step-num {
+    @apply font-mono text-sm font-semibold text-gold-400;
+  }
+  .step-title {
+    @apply mt-3 font-display text-lg font-semibold text-offwhite;
+  }
+  .step-desc {
+    @apply mt-2 text-sm leading-relaxed text-offwhite-muted;
+  }
+
+  /* ---- Founder ---- */
+  .founder-frame {
+    @apply relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-gold/30 p-2;
+    background: linear-gradient(150deg, rgba(184, 150, 62, 0.25), rgba(30, 30, 30, 0.4));
+  }
+  .founder-img {
+    @apply h-full w-full rounded-[1.4rem] object-cover;
+    object-position: center 28%;
+  }
+  .founder-sign-badge {
+    @apply mx-auto mt-4 flex max-w-sm items-center justify-between gap-3 rounded-xl border border-white/10 bg-charcoal-900/70 px-4 py-3;
+  }
+  .founder-quote {
+    @apply mt-7 border-l-2 border-gold-500 pl-5 font-display text-xl italic leading-snug text-offwhite;
+  }
+
+  /* ---- Fees ---- */
+  .fee-card {
+    @apply flex flex-col rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
+  }
+  .fee-card-feature {
+    @apply border-gold/35 bg-gold/[0.06] shadow-seal;
+  }
+  .fee-card-title {
+    @apply font-display text-lg font-semibold text-offwhite;
+  }
+  .fee-card-note {
+    @apply mt-1 text-xs text-offwhite-dim;
+  }
+  .fee-list {
+    @apply mt-5 space-y-3 text-sm;
+  }
+  .fee-list li {
+    @apply flex items-center justify-between gap-4 border-b border-white/5 pb-3 text-offwhite-muted last:border-0 last:pb-0;
+  }
+  .fee-amt {
+    @apply shrink-0 font-mono font-semibold tabular-nums text-offwhite;
+  }
+  .fee-amt-free {
+    @apply text-gold-300;
+  }
+  .fee-unit {
+    @apply ml-0.5 text-[0.7rem] font-sans font-normal text-offwhite-dim;
+  }
+  .fee-card-fine {
+    @apply mt-4 text-xs leading-relaxed text-offwhite-dim;
+  }
+
+  /* ---- Booking form ---- */
+  .booking-form {
+    @apply rounded-3xl border border-white/10 bg-charcoal-900/60 p-6 backdrop-blur sm:p-8;
+  }
+  .form-grid {
+    @apply grid grid-cols-1 gap-5 sm:grid-cols-2;
+  }
+  .field {
+    @apply flex flex-col gap-2;
+  }
+  .field-full {
+    @apply sm:col-span-2;
+  }
+  .field-label {
+    @apply text-sm font-medium text-offwhite-muted;
+  }
+  .req {
+    @apply text-crimson-400;
+  }
+  .opt {
+    @apply text-xs font-normal text-offwhite-dim;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-white/12 bg-charcoal-950/60 px-4 py-3 text-[0.95rem] text-offwhite transition placeholder:text-offwhite-dim/70;
+  }
+  .field-input:hover {
+    @apply border-white/20;
+  }
+  .field-input:focus {
+    @apply border-gold/60 bg-charcoal-950/80 outline-none ring-2 ring-gold/25;
+  }
+  .field-input[aria-invalid="true"] {
+    @apply border-crimson-400/70 ring-2 ring-crimson-500/25;
+  }
+  select.field-input {
+    @apply appearance-none bg-[length:1.1rem] bg-[right_0.9rem_center] bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A39C8F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  }
+  .field-hint {
+    @apply text-xs text-offwhite-dim;
+  }
+  .field-error {
+    @apply text-xs font-medium text-crimson-400;
+  }
+  .consent {
+    @apply flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-offwhite-muted;
+  }
+  .consent-box {
+    @apply mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-white/20 bg-charcoal-950 text-gold-500 accent-gold-500 focus-visible:outline-2;
+  }
+
+  .form-status {
+    @apply mt-4 text-sm font-medium empty:hidden;
+  }
+  .form-status.is-success {
+    @apply rounded-xl border border-gold/30 bg-gold/10 px-4 py-3 text-gold-100;
+  }
+  .form-status.is-error {
+    @apply rounded-xl border border-crimson-400/40 bg-crimson-500/10 px-4 py-3 text-crimson-400;
+  }
+  .form-fineprint {
+    @apply mt-4 flex items-start gap-2 text-xs leading-relaxed text-offwhite-dim;
+  }
+
+  /* honeypot — visually + a11y hidden, still in DOM for bots */
+  .hp {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* ---- Contact lines ---- */
+  .contact-line {
+    @apply flex items-center gap-4;
+  }
+  .contact-ico {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-gold/25 bg-gold/10 text-gold-300;
+  }
+  .contact-ico svg {
+    @apply h-5 w-5;
+  }
+  .contact-link {
+    @apply text-lg font-medium text-offwhite transition-colors hover:text-gold-200;
+  }
+
+  /* ---- Footer ---- */
+  .site-footer {
+    @apply border-t border-white/10 bg-charcoal-950/70;
+  }
+  .footer-col {
+    @apply flex flex-col gap-2.5;
+  }
+  .footer-head {
+    @apply mb-1 text-xs font-semibold uppercase tracking-label text-gold-300;
+  }
+  .footer-link {
+    @apply text-sm text-offwhite-muted transition-colors hover:text-offwhite;
+  }
+  .footer-meta {
+    @apply text-sm text-offwhite-dim;
+  }
+  .footer-bottom {
+    @apply mt-12 flex flex-col gap-3 border-t border-white/5 pt-6 text-xs text-offwhite-dim;
+  }
+  .footer-disclaimer {
+    @apply max-w-3xl leading-relaxed;
+  }
+
+  /* ---- Back to top ---- */
+  .to-top {
+    @apply fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full border border-gold/30 bg-charcoal-900/90 text-gold-200 shadow-vault backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-gold/60;
+  }
+
+  .noscript-bar {
+    @apply fixed inset-x-0 bottom-0 z-50 bg-crimson-600 px-4 py-3 text-center text-sm text-offwhite;
+  }
+  .noscript-bar a {
+    @apply font-semibold underline;
+  }
+}
+
+@layer components {
+  /* ---- Real logo (seal) treatments ---- */
+  .logo-coin {
+    @apply grid shrink-0 place-items-center overflow-hidden rounded-full ring-1 ring-gold/40;
+    background: #1e1e1e;
+  }
+  .logo-coin img {
+    @apply h-full w-full;
+    object-fit: contain;
+  }
+  .medallion {
+    @apply relative mx-auto grid aspect-square w-full max-w-sm place-items-center overflow-hidden rounded-full;
+    background: #1e1e1e;
+    box-shadow: 0 26px 70px -22px rgba(184, 150, 62, 0.55);
+  }
+  .medallion img {
+    @apply h-full w-full;
+    object-fit: contain;
+  }
+  .medallion-ring {
+    @apply pointer-events-none absolute inset-0 rounded-full;
+    box-shadow: inset 0 0 0 2px rgba(184, 150, 62, 0.55), inset 0 0 28px rgba(0, 0, 0, 0.35);
+  }
+  .medallion-halo {
+    @apply pointer-events-none absolute rounded-full;
+    inset: -16px;
+    border: 1px dashed rgba(184, 150, 62, 0.4);
+    animation: seal-rotate 90s linear infinite;
+  }
+
+  /* ---- Service area ---- */
+  .area-card {
+    @apply rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
+  }
+  .area-tags {
+    @apply mt-5 flex flex-wrap gap-2;
+  }
+  .area-tag {
+    @apply rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-offwhite-muted transition hover:border-gold/40 hover:text-offwhite;
+  }
+
+  /* ---- FAQ accordion (native <details>) ---- */
+  .faq-item {
+    @apply overflow-hidden rounded-xl border border-white/10 bg-charcoal-800/50 transition-colors;
+  }
+  .faq-item[open] {
+    @apply border-gold/30;
+  }
+  .faq-q {
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-display text-base font-medium text-offwhite transition-colors hover:text-gold-200;
+  }
+  .faq-q::-webkit-details-marker {
+    display: none;
+  }
+  .faq-icon {
+    @apply h-5 w-5 shrink-0 text-gold-300 transition-transform duration-300;
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    @apply px-5 pb-5 text-sm leading-relaxed text-offwhite-muted;
+  }
+
+  /* ---- Fee explanatory note ---- */
+  .fee-note-box {
+    @apply mt-6 rounded-2xl border border-gold/20 bg-gold/[0.05] p-6 text-sm leading-relaxed text-offwhite-muted;
+  }
+
+  /* ---- Legal & disclosures ---- */
+  .legal-headline {
+    @apply flex items-start gap-4 rounded-2xl border border-gold/30 bg-gold/[0.06] p-6 text-sm leading-relaxed text-offwhite-muted;
+  }
+  .legal-block {
+    @apply rounded-2xl border border-white/10 bg-charcoal-800/40 p-6;
+  }
+  .legal-block-title {
+    @apply font-display text-base font-semibold text-offwhite;
+  }
+  .legal-block p {
+    @apply mt-2 text-sm leading-relaxed text-offwhite-muted;
+  }
+
+  /* ---- Services full-list cards ---- */
+  .svc-list-card {
+    @apply rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
+  }
+  .svc-list-title {
+    @apply font-display text-lg font-semibold text-offwhite;
+  }
+  .svc-list {
+    @apply mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-offwhite-muted marker:text-gold-500;
+  }
+}
+
+/* =========================================================================
+   MOTION — hero load stagger + scroll reveals
+   ========================================================================= */
+@layer utilities {
+  .anim-1, .anim-2, .anim-3, .anim-4, .anim-5 {
+    animation: rise-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .anim-1 { animation-delay: 0.05s; }
+  .anim-2 { animation-delay: 0.16s; }
+  .anim-3 { animation-delay: 0.28s; }
+  .anim-4 { animation-delay: 0.4s; }
+  .anim-5 { animation-delay: 0.52s; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================================
+   REDUCED MOTION — disable all non-essential animation
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .seal-spin,
+  .medallion-halo {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .anim-1, .anim-2, .anim-3, .anim-4, .anim-5 {
+    animation: none !important;
+  }
+}
+
+/* =========================================================================
+   KEYFRAMES — defined explicitly so they ship regardless of Tailwind's
+   animate-* utility generation (we drive animation from raw CSS above).
+   ========================================================================= */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes seal-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-130%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(230%) skewX(-18deg);
+  }
+}

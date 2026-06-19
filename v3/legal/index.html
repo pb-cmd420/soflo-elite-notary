@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    {{> head}}
+  </head>
+  <body class="min-h-screen bg-charcoal font-sans text-offwhite antialiased">
+    {{> header}}
+
+    <main id="main">
+      <section class="section" aria-labelledby="legal-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Legal &amp; Disclosures</p>
+            <h1 id="legal-title" class="section-title">Florida notary disclosures.</h1>
+            <p class="section-lede">Required and good-faith disclosures for notarial services performed in the State of Florida.</p>
+          </div>
+
+          <div class="legal-headline reveal" data-reveal role="note">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 shrink-0 text-gold-300" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.7 7 9 4-1.3 7-4.5 7-9V6l-7-3Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+            <p>
+              <strong class="text-offwhite">Not an attorney; no legal advice.</strong>
+              SoFlo Elite Notary &amp; Business Services LLC is not a law firm. Pedro “Pete” Quintero is a notary public
+              commissioned by the State of Florida and is <strong class="text-offwhite">not</strong> an attorney licensed to
+              practice law in Florida. A notary public may not give legal advice, accept fees for legal advice, draft legal
+              documents, or choose the notarial act or certificate for you.
+            </p>
+          </div>
+
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <div class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Not a “Notario Público”</h2>
+              <p>Under Florida law we do not use, and are not described by, the terms “notario” or “notario público.” In many
+                countries a <em>notario</em> is a licensed attorney; a Florida notary public is not, and cannot provide legal
+                advice or representation.</p>
+            </div>
+
+            <div class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Identification &amp; Right to Decline</h2>
+              <p>A valid, unexpired government-issued photo ID is required. By law we must decline any notarization where the
+                signer cannot be properly identified, does not appear to understand the document or act willingly, is not
+                personally present, or where the act would be improper or unlawful.</p>
+            </div>
+
+            <div class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Fees</h2>
+              <p>Notarial fees are governed by Chapter 117, Florida Statutes (maximum $10 per notarial act; $30 to solemnize
+                a marriage). Travel and after-hours convenience fees are separate, agreed in advance, and are not set by the
+                State. A full quote is provided before your appointment.</p>
+            </div>
+
+            <div id="privacy" class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Privacy Notice</h2>
+              <p>Information you submit through the booking form is used solely to respond to and fulfill your request. We do
+                not sell, rent, or trade your personal information. Data is transmitted over HTTPS; please do not send
+                full Social Security numbers or sensitive document contents through the form.</p>
+            </div>
+
+            <div class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Informational Only</h2>
+              <p>Content on this website is provided for general informational purposes and does not constitute legal advice.
+                For legal questions about your documents, consult a licensed Florida attorney.</p>
+            </div>
+
+            <div class="legal-block reveal" data-reveal>
+              <h2 class="legal-block-title">Commission &amp; Authority</h2>
+              <p>Notarial services are performed in the State of Florida only, under an active Florida notary commission
+                (No. HH392574, expiring April 30, 2027) backed by a $7,500 surety bond as required by Florida law.</p>
+            </div>
+          </div>
+
+          <div class="mt-10 reveal" data-reveal>
+            <a href="/#booking" class="btn btn-gold">Book a Signing</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

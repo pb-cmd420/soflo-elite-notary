@@ -1,0 +1,70 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#1E1E1E" />
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="SoFlo Elite Notary & Business Services LLC" />
+<link rel="canonical" href="{{canonical}}" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/soflologo.jpg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SoFlo Elite Notary & Business Services" />
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{description}}" />
+<meta property="og:url" content="{{canonical}}" />
+<meta property="og:image" content="https://sofloelitenotary.com/soflologo.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{title}}" />
+<meta name="twitter:description" content="{{description}}" />
+<meta name="twitter:image" content="https://sofloelitenotary.com/soflologo.jpg" />
+
+<!--
+  The restrictive Content-Security-Policy <meta> is injected at BUILD time
+  (see vite.config.js) so the Vite dev server is never broken. Authoritative
+  policy ships as real HTTP headers in public/_headers.
+-->
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Notary",
+    "name": "SoFlo Elite Notary & Business Services LLC",
+    "alternateName": "SoFlo Elite Notary",
+    "description": "Premium mobile notary public led by a 19-year banking veteran, delivering bank-level precision for real estate and loan signings, corporate documents, estate planning, and general notarization across South Florida.",
+    "url": "https://sofloelitenotary.com/",
+    "telephone": "+1-786-634-0070",
+    "email": "SOFLOELITENOTARY@proton.me",
+    "image": "https://sofloelitenotary.com/soflologo.jpg",
+    "logo": "https://sofloelitenotary.com/soflologo.jpg",
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "founder": { "@type": "Person", "name": "Pedro \"Pete\" Quintero", "jobTitle": "Founder & Managing Member" },
+    "address": { "@type": "PostalAddress", "addressRegion": "FL", "addressCountry": "US" },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Miami-Dade County" },
+      { "@type": "AdministrativeArea", "name": "Broward County" }
+    ],
+    "serviceType": [
+      "Mobile Notary",
+      "Real Estate & Loan Signing Agent",
+      "Corporate Document Notary",
+      "Estate Planning Notary",
+      "Wedding Officiant"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ]
+  }
+</script>
+
+<script type="module" src="/src/main.js"></script>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    {{> head}}
+  </head>
+  <body class="min-h-screen bg-charcoal font-sans text-offwhite antialiased">
+    {{> header}}
+
+    <main id="main">
+      <!-- ================================ HERO ================================ -->
+      <section class="relative overflow-hidden" aria-labelledby="hero-title">
+        <div class="mx-auto grid w-full max-w-content items-center gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-28 lg:pt-28">
+          <div>
+            <p class="eyebrow anim-1">
+              <span class="eyebrow-line" aria-hidden="true"></span>
+              South Florida · Mobile &amp; Concierge
+            </p>
+            <h1 id="hero-title" class="anim-2 mt-6 font-display text-[clamp(2.6rem,6vw,4.6rem)] font-semibold leading-[1.04] tracking-tight text-offwhite">
+              Nineteen years of <span class="text-gradient-gold">banking-grade</span> precision —
+              brought to your door.
+            </h1>
+            <p class="anim-3 mt-7 max-w-prose text-lg leading-relaxed text-offwhite-muted">
+              SoFlo Elite Notary is the mobile notary South Florida's attorneys, lenders, and
+              executives call when a signature has to be flawless. Founded by a career banker who
+              has overseen thousands of high-stakes signings, we treat every document like the
+              closing it might become.
+            </p>
+
+            <div class="anim-4 mt-9 flex flex-wrap items-center gap-4">
+              <a href="#booking" class="btn btn-gold">
+                Schedule Your Signing
+                <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+              <a href="tel:+17866340070" class="btn btn-outline btn-sm">
+                <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M4.5 6.5c0 7.18 5.82 13 13 13l1.7-3.4-4-1.6-1.6 1.6a11 11 0 0 1-5.7-5.7l1.6-1.6-1.6-4L4.5 6.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/></svg>
+                (786) 634-0070
+              </a>
+            </div>
+
+            <dl class="anim-5 mt-12 grid max-w-lg grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="stat"><dt class="stat-label">Banking</dt><dd class="stat-value">19<span class="stat-unit">+ yrs</span></dd></div>
+              <div class="stat"><dt class="stat-label">Surety Bond</dt><dd class="stat-value">$7.5<span class="stat-unit">K</span></dd></div>
+              <div class="stat"><dt class="stat-label">Availability</dt><dd class="stat-value">7<span class="stat-unit">days</span></dd></div>
+            </dl>
+          </div>
+
+          <!-- Real seal medallion -->
+          <div class="anim-4 relative mx-auto w-full max-w-md">
+            <div class="seal-glow" aria-hidden="true"></div>
+            <div class="relative mx-auto w-full max-w-sm">
+              <div class="medallion-halo" aria-hidden="true"></div>
+              <div class="medallion">
+                <img
+                  src="/hero-logo.png"
+                  alt="SoFlo Elite Notary &amp; Business Services official seal — Integrity, Reliability, Accuracy. Florida commission HH392574."
+                  width="420"
+                  height="420"
+                  loading="eager"
+                />
+                <span class="medallion-ring" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="flex items-center justify-between">
+                <span class="badge"><span class="badge-dot" aria-hidden="true"></span>Active Commission</span>
+                <span class="font-mono text-xs text-offwhite-dim">FL · NOTARY</span>
+              </div>
+              <p class="mt-4 font-mono text-sm tracking-wide text-offwhite">No. HH392574</p>
+              <p class="mt-1 text-xs text-offwhite-dim">Expires April 30, 2027 · $7,500 surety bond on file</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="trust-strip" aria-label="Credentials">
+          <div class="mx-auto flex max-w-content flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-4 text-sm sm:px-8">
+            <span class="trust-pill"><svg viewBox="0 0 24 24" class="icon-sm text-gold-300" aria-hidden="true"><path d="m9 12 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed Florida Notary Public</span>
+            <span class="trust-pill"><svg viewBox="0 0 24 24" class="icon-sm text-gold-300" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.7 7 9 4-1.3 7-4.5 7-9V6l-7-3Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>$7,500 Surety Bonded</span>
+            <span class="trust-pill"><svg viewBox="0 0 24 24" class="icon-sm text-gold-300" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>19+ Years in Banking</span>
+            <span class="trust-pill"><svg viewBox="0 0 24 24" class="icon-sm text-gold-300" aria-hidden="true"><path d="M12 21s-7-4.8-7-10a7 7 0 0 1 14 0c0 5.2-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Miami-Dade &amp; Broward</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROBLEM vs SOLUTION ===================== -->
+      <section id="standard" class="section" aria-labelledby="standard-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>01 — The Standard</p>
+            <h2 id="standard-title" class="section-title">A rejected signature can cost you the deal.</h2>
+            <p class="section-lede">
+              One missed acknowledgment, one expired commission, one improperly journaled stamp — and
+              a closing collapses, a POA is voided, a loan funds late. The difference between a casual
+              notary and bank-level execution is the difference between done and done right.
+            </p>
+          </div>
+
+          <div class="mt-8 reveal" data-reveal>
+            <a href="#booking" class="btn btn-gold">
+              Request Your Appointment
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </a>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-2">
+            <div class="compare compare-risk reveal" data-reveal>
+              <div class="compare-head">
+                <span class="compare-tag compare-tag-risk">The Ordinary Notary</span>
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-crimson-400" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <ul class="compare-list">
+                <li><svg viewBox="0 0 24 24" class="compare-x" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Unfamiliar with lender packages, refis, and HELOC stacks — fumbles the closing table.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-x" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Guesses at acknowledgment vs. jurat — the wrong certificate voids the document.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-x" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Runs late, reschedules, or no-shows — and your filing deadline slips.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-x" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Loose with identity verification and confidentiality on sensitive paperwork.</span></li>
+              </ul>
+            </div>
+
+            <div class="compare compare-solution reveal" data-reveal>
+              <div class="compare-head">
+                <span class="compare-tag compare-tag-solution">The SoFlo Standard</span>
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-gold-300" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.7 7 9 4-1.3 7-4.5 7-9V6l-7-3Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="m9 11.5 2 2 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <ul class="compare-list">
+                <li><svg viewBox="0 0 24 24" class="compare-check" aria-hidden="true"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Two decades inside mortgage closings, HELOCs, and business loan packages — read fluently.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-check" aria-hidden="true"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>The correct notarial certificate every time, executed to Florida statute.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-check" aria-hidden="true"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>On time, every time — with same-day and after-hours signings across South Florida.</span></li>
+                <li><svg viewBox="0 0 24 24" class="compare-check" aria-hidden="true"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Rigorous ID verification and bank-grade discretion on every page.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES TEASER ===================== -->
+      <section id="services" class="section section-alt" aria-labelledby="services-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>02 — Services</p>
+            <h2 id="services-title" class="section-title">Every signing, handled with closing-table discipline.</h2>
+            <p class="section-lede">Fully commissioned across Miami-Dade and Broward — from loan closings to estate plans.</p>
+          </div>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="svc-card reveal" data-reveal>
+              <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3 class="svc-title">Real Estate &amp; Loan Signings</h3>
+              <p class="svc-desc">Closing-table fluency from two decades in lending. Calm, accurate, and lender-ready.</p>
+              <ul class="svc-detail">
+                <li>Mortgage &amp; refinance packages</li>
+                <li>HELOCs &amp; deeds of trust</li>
+                <li>Warranty &amp; quit-claim deeds</li>
+                <li>Lien waivers &amp; notice of commencement</li>
+              </ul>
+            </article>
+
+            <article class="svc-card reveal" data-reveal>
+              <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12M9 7h2m-2 4h6m-6 4h6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3 class="svc-title">Corporate &amp; Business Documents</h3>
+              <p class="svc-desc">Formation through funding — notarized with an understanding of what each instrument does.</p>
+              <ul class="svc-detail">
+                <li>Articles, bylaws &amp; operating agreements</li>
+                <li>Resolutions &amp; corporate minutes</li>
+                <li>NDAs, non-competes &amp; contracts</li>
+                <li>Promissory notes &amp; loan agreements</li>
+              </ul>
+            </article>
+
+            <article class="svc-card reveal" data-reveal>
+              <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="M9 13s1-1 3-1 3 1 3 1m-6 4s1-1 3-1 3 1 3 1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+              <h3 class="svc-title">Estate Planning &amp; POA</h3>
+              <p class="svc-desc">The documents your family relies on — witnessed and executed exactly to statute.</p>
+              <ul class="svc-detail">
+                <li>Wills &amp; self-proving affidavits</li>
+                <li>Revocable &amp; irrevocable trusts</li>
+                <li>Durable &amp; healthcare powers of attorney</li>
+                <li>Living wills &amp; surrogate designations</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="mt-8 reveal" data-reveal>
+            <a href="/services/" class="btn btn-outline">View all services &amp; 100+ document types
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ PROCESS ============================ -->
+      <section id="process" class="section" aria-labelledby="process-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>03 — Process</p>
+            <h2 id="process-title" class="section-title">Four steps. Zero guesswork.</h2>
+          </div>
+
+          <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <li class="step reveal" data-reveal><span class="step-num">01</span><h3 class="step-title">Request</h3><p class="step-desc">Send your details through the secure form or call. Tell us the document, the place, and the time.</p></li>
+            <li class="step reveal" data-reveal><span class="step-num">02</span><h3 class="step-title">Confirm &amp; Quote</h3><p class="step-desc">You get a transparent quote — notarial fee plus travel — confirmed in writing before we move.</p></li>
+            <li class="step reveal" data-reveal><span class="step-num">03</span><h3 class="step-title">We Come to You</h3><p class="step-desc">Home, office, hospital, or closing table anywhere in Miami-Dade or Broward. On time, prepared.</p></li>
+            <li class="step reveal" data-reveal><span class="step-num">04</span><h3 class="step-title">Sealed &amp; Done</h3><p class="step-desc">Proper IDs verified, the right certificate executed, journaled and sealed. Closing-table clean.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===================== FEES TEASER ===================== -->
+      <section class="section section-alt" aria-labelledby="fees-teaser-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>04 — Transparent Fees</p>
+            <h2 id="fees-teaser-title" class="section-title">Florida-compliant pricing, quoted before we move.</h2>
+            <p class="section-lede">Florida law caps notarial fees at $10 per act; mobile travel is agreed in advance. No surprises.</p>
+          </div>
+          <div class="mt-10 grid gap-6 sm:grid-cols-3 reveal" data-reveal>
+            <div class="fee-card"><h3 class="fee-card-title">Notarial Acts</h3><p class="mt-3 font-display text-3xl font-semibold text-offwhite">$10<span class="text-base font-sans text-offwhite-dim">/act</span></p><p class="fee-card-fine">State-capped maximum · $30 to solemnize a marriage.</p></div>
+            <div class="fee-card fee-card-feature"><h3 class="fee-card-title">Mobile Travel</h3><p class="mt-3 font-display text-3xl font-semibold text-offwhite">from $15</p><p class="fee-card-fine">By distance zone · traffic &amp; after-hours quoted up front.</p></div>
+            <div class="fee-card"><h3 class="fee-card-title">After-Hours</h3><p class="mt-3 font-display text-3xl font-semibold text-offwhite">7 days</p><p class="fee-card-fine">Evening, overnight, weekend &amp; holiday availability.</p></div>
+          </div>
+          <div class="mt-8 reveal" data-reveal>
+            <a href="/fees/" class="btn btn-outline">See the full fee schedule
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICE AREA TEASER ===================== -->
+      <section class="section" aria-labelledby="areas-teaser-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>05 — Service Area</p>
+            <h2 id="areas-teaser-title" class="section-title">Mobile across South Florida — we come to you.</h2>
+            <p class="section-lede">Covering Miami-Dade and Broward, from Brickell closings to Fort Lauderdale hospital rooms.</p>
+          </div>
+          <div class="area-tags mt-8 reveal" data-reveal>
+            <span class="area-tag">Miami</span><span class="area-tag">Miami Beach</span><span class="area-tag">Coral Gables</span><span class="area-tag">Doral</span><span class="area-tag">Hialeah</span><span class="area-tag">Kendall</span><span class="area-tag">Aventura</span><span class="area-tag">Fort Lauderdale</span><span class="area-tag">Hollywood</span><span class="area-tag">Pembroke Pines</span><span class="area-tag">Davie</span><span class="area-tag">Weston</span><span class="area-tag">+ more</span>
+          </div>
+          <div class="mt-8 reveal" data-reveal>
+            <a href="/service-areas/" class="btn btn-outline">See full coverage
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FOUNDER TEASER ===================== -->
+      <section class="section section-alt" aria-labelledby="founder-teaser-title">
+        <div class="mx-auto grid w-full max-w-content items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div class="reveal" data-reveal>
+            <div class="founder-frame">
+              <img src="/founder.jpg" alt="Pedro &quot;Pete&quot; Quintero, founder of SoFlo Elite Notary &amp; Business Services" width="440" height="440" loading="lazy" decoding="async" class="founder-img" />
+            </div>
+          </div>
+          <div class="reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>06 — The Founder</p>
+            <h2 id="founder-teaser-title" class="section-title">Meet Pedro <span class="text-gold-300">“Pete”</span> Quintero.</h2>
+            <p class="mt-5 max-w-prose text-lg leading-relaxed text-offwhite-muted">
+              Nineteen-plus years in banking. Seven-plus years a Florida notary. Thousands of mortgage
+              closings, HELOCs, powers of attorney, and trust documents. I founded SoFlo Elite Notary to
+              bring that banking-grade standard straight to your door.
+            </p>
+            <blockquote class="founder-quote">“When it comes to important documents, experience matters.”</blockquote>
+            <div class="mt-7"><a href="/about/" class="btn btn-outline btn-sm">Read Pete's full story</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ BOOKING ============================ -->
+      <section id="booking" class="section section-alt" aria-labelledby="booking-title">
+        <div class="mx-auto grid w-full max-w-content gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>07 — Book a Signing</p>
+            <h2 id="booking-title" class="section-title">Request your secure appointment.</h2>
+            <p class="mt-5 max-w-prose leading-relaxed text-offwhite-muted">
+              Tell us what you need notarized and where. You'll receive a written quote and confirmation —
+              typically same day. Prefer to talk it through? Call or email directly.
+            </p>
+            <ul class="mt-8 space-y-4">
+              <li class="contact-line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 6.5c0 7.18 5.82 13 13 13l1.7-3.4-4-1.6-1.6 1.6a11 11 0 0 1-5.7-5.7l1.6-1.6-1.6-4L4.5 6.5Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg></span><a href="tel:+17866340070" class="contact-link">(786) 634-0070</a></li>
+              <li class="contact-line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a href="mailto:SOFLOELITENOTARY@proton.me" class="contact-link break-all">SOFLOELITENOTARY@proton.me</a></li>
+              <li class="contact-line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0 1 14 0c0 5.2-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span><span class="text-offwhite-muted">Mobile across Miami-Dade &amp; Broward · Available 24/7</span></li>
+            </ul>
+          </div>
+
+          <form id="booking-form" class="booking-form reveal" data-reveal method="post" action="/" name="booking-form" data-netlify="true" data-netlify-honeypot="company_website" novalidate aria-describedby="form-status">
+            <input type="hidden" name="form-name" value="booking-form" />
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="full_name" class="field-label">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="full_name" name="full_name" type="text" autocomplete="name" required maxlength="80" class="field-input" aria-required="true" aria-describedby="err-full_name" />
+                <p id="err-full_name" class="field-error" data-error-for="full_name" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="email" class="field-label">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required maxlength="120" class="field-input" inputmode="email" aria-required="true" aria-describedby="err-email" />
+                <p id="err-email" class="field-error" data-error-for="email" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="phone" class="field-label">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="20" class="field-input" inputmode="tel" aria-required="true" aria-describedby="err-phone" placeholder="(786) 555-0123" />
+                <p id="err-phone" class="field-error" data-error-for="phone" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="service_type" class="field-label">Service type <span class="req" aria-hidden="true">*</span></label>
+                <select id="service_type" name="service_type" required class="field-input" aria-required="true" aria-describedby="err-service_type">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="Real Estate & Loan Signing">Real Estate &amp; Loan Signing</option>
+                  <option value="Corporate & Business Documents">Corporate &amp; Business Documents</option>
+                  <option value="Estate Planning & POA">Estate Planning &amp; POA</option>
+                  <option value="General Mobile Notary">General Mobile Notary</option>
+                  <option value="Wedding Officiant">Wedding Officiant</option>
+                  <option value="Other / Not Sure">Other / Not sure</option>
+                </select>
+                <p id="err-service_type" class="field-error" data-error-for="service_type" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="preferred_datetime" class="field-label">Preferred date &amp; time <span class="opt">(optional)</span></label>
+                <input id="preferred_datetime" name="preferred_datetime" type="datetime-local" class="field-input" aria-describedby="preferred_datetime_hint err-preferred_datetime" />
+                <p id="preferred_datetime_hint" class="field-hint">Or describe your preferred time in the Details field below.</p>
+                <p id="err-preferred_datetime" class="field-error" data-error-for="preferred_datetime" role="alert" hidden></p>
+              </div>
+              <div class="field field-full">
+                <label for="location" class="field-label">Location — city / neighborhood <span class="req" aria-hidden="true">*</span></label>
+                <input id="location" name="location" type="text" autocomplete="address-level2" required maxlength="120" class="field-input" aria-required="true" aria-describedby="err-location" placeholder="e.g. Coral Gables, Brickell, Fort Lauderdale" />
+                <p id="err-location" class="field-error" data-error-for="location" role="alert" hidden></p>
+              </div>
+              <div class="field field-full">
+                <label for="details" class="field-label">Document details <span class="opt">(optional)</span></label>
+                <textarea id="details" name="details" rows="4" maxlength="1000" class="field-input" aria-describedby="err-details" placeholder="Which documents, how many signers, and any access notes (gate codes, hospital room, etc.)."></textarea>
+                <p id="err-details" class="field-error" data-error-for="details" role="alert" hidden></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="company_website">Company website (leave this field empty)</label>
+                <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="field field-full">
+                <label class="consent">
+                  <input type="checkbox" name="consent" required class="consent-box" aria-required="true" />
+                  <span>I consent to be contacted about my request and agree to the <a href="/legal/" class="link-gold-inline">privacy notice</a>. <span class="req" aria-hidden="true">*</span></span>
+                </label>
+                <p id="err-consent" class="field-error" data-error-for="consent" role="alert" hidden></p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block mt-2" data-submit>
+              <span data-submit-label>Request Secure Appointment</span>
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-fineprint">
+              <svg viewBox="0 0 24 24" class="icon-sm text-gold-300" aria-hidden="true"><path d="M6 10V7a6 6 0 0 1 12 0v3m-13 0h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+              Submissions are validated and sanitized in your browser, transmitted over HTTPS, and never sold or shared.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===================== FAQ TEASER ===================== -->
+      <section class="section" aria-labelledby="faq-teaser-title">
+        <div class="mx-auto w-full max-w-content px-5 sm:px-8">
+          <div class="section-head reveal" data-reveal>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>08 — Still Have Questions?</p>
+            <h2 id="faq-teaser-title" class="section-title">Frequently asked questions.</h2>
+          </div>
+          <div class="mt-10 grid gap-3 lg:max-w-4xl">
+            <details class="faq-item reveal" data-reveal>
+              <summary class="faq-q">How much does a mobile notary cost?<svg viewBox="0 0 24 24" class="faq-icon" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+              <div class="faq-a">Florida caps notarial acts at $10 each. Travel is by distance zone ($15–$50+) with a traffic multiplier; after-hours, weekend, or holiday surcharges may apply. You'll always get a transparent total quoted before the appointment.</div>
+            </details>
+            <details class="faq-item reveal" data-reveal>
+              <summary class="faq-q">What do I need to bring?<svg viewBox="0 0 24 24" class="faq-icon" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+              <div class="faq-a">A valid, government-issued photo ID. Do not sign the document beforehand — the notary must witness your signature. Have it complete but unsigned when we arrive.</div>
+            </details>
+            <details class="faq-item reveal" data-reveal>
+              <summary class="faq-q">What are your hours?<svg viewBox="0 0 24 24" class="faq-icon" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+              <div class="faq-a">Available 24 hours a day, 7 days a week — including nights, weekends, and holidays. Same-day appointments are often available with advance notice.</div>
+            </details>
+          </div>
+          <div class="mt-8 reveal" data-reveal>
+            <a href="/faq/" class="btn btn-outline">See all FAQs
+              <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>
