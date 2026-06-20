@@ -43,6 +43,11 @@ function readEnv(key, fallback) {
 const getEndpoint = () => readEnv('VITE_API_ENDPOINT', '/api/booking');
 const getContactEmail = () => readEnv('VITE_CONTACT_EMAIL', 'SOFLOELITENOTARY@proton.me');
 
+/** Pick a string by the page's current language (set by the i18n module). */
+function t(en, es) {
+  return (document.documentElement.lang || '').toLowerCase().startsWith('es') ? es : en;
+}
+
 export function initBookingForm() {
   const form = document.getElementById('booking-form');
   if (!form) return;
@@ -91,7 +96,11 @@ export function initBookingForm() {
     const last = Number(localStorage.getItem(STORAGE_KEY) || 0);
     if (last && Date.now() - last < RATE_LIMIT_MS) {
       const wait = Math.ceil((RATE_LIMIT_MS - (Date.now() - last)) / 1000);
-      setStatus(statusEl, 'error', `Please wait ${wait}s before sending another request.`);
+      setStatus(
+        statusEl,
+        'error',
+        t(`Please wait ${wait}s before sending another request.`, `Espere ${wait}s antes de enviar otra solicitud.`),
+      );
       return;
     }
 
@@ -113,8 +122,15 @@ export function initBookingForm() {
     }
 
     if (invalid.length) {
-      const plural = invalid.length > 1 ? 's' : '';
-      setStatus(statusEl, 'error', `Please review the ${invalid.length} highlighted field${plural}.`);
+      const s = invalid.length > 1 ? 's' : '';
+      setStatus(
+        statusEl,
+        'error',
+        t(
+          `Please review the ${invalid.length} highlighted field${s}.`,
+          `Revise ${invalid.length} campo${s} resaltado${s}.`,
+        ),
+      );
       focusField(form, invalid[0]);
       return;
     }
@@ -159,7 +175,10 @@ export function initBookingForm() {
       setStatus(
         statusEl,
         'success',
-        'Thank you — your request was received. We will confirm your appointment and quote shortly, typically the same day.',
+        t(
+          'Thank you — your request was received. We will confirm your appointment and quote shortly, typically the same day.',
+          'Gracias — recibimos su solicitud. Confirmaremos su cita y cotización en breve, normalmente el mismo día.',
+        ),
       );
       showThankYouModal();
     } catch (_) {
@@ -168,8 +187,8 @@ export function initBookingForm() {
       setStatusWithLink(
         statusEl,
         'error',
-        'We could not reach the booking service just now. ',
-        { label: 'Email your request instead →', href: mailto },
+        t('We could not reach the booking service just now. ', 'No pudimos contactar el servicio de reservas en este momento. '),
+        { label: t('Email your request instead →', 'Envíe su solicitud por correo →'), href: mailto },
       );
     } finally {
       setLoading(submitBtn, submitLabel, false);
@@ -235,13 +254,20 @@ function setLoading(btn, label, loading) {
   if (!btn) return;
   btn.disabled = loading;
   btn.setAttribute('aria-busy', loading ? 'true' : 'false');
-  if (label) label.textContent = loading ? 'Sending…' : DEFAULT_LABEL;
+  if (label) label.textContent = loading ? t('Sending…', 'Enviando…') : t(DEFAULT_LABEL, 'Solicitar Cita Segura');
 }
 
 function fakeSuccess(form, statusEl) {
   clearAllErrors(form);
   form.reset();
-  setStatus(statusEl, 'success', 'Thank you — your request was received. We will be in touch shortly.');
+  setStatus(
+    statusEl,
+    'success',
+    t(
+      'Thank you — your request was received. We will be in touch shortly.',
+      'Gracias — recibimos su solicitud. Nos pondremos en contacto en breve.',
+    ),
+  );
   showThankYouModal();
 }
 

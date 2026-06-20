@@ -109,6 +109,20 @@
     @apply grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-offwhite transition hover:border-gold/40 hover:text-gold-200;
   }
 
+  /* ---- Language switch (EN | ES) ---- */
+  .lang-switch {
+    @apply inline-flex items-center rounded-full border border-white/12 bg-white/5 p-0.5;
+  }
+  .lang-btn {
+    @apply rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-offwhite-dim transition-colors;
+  }
+  .lang-btn:hover {
+    @apply text-offwhite;
+  }
+  .lang-btn.is-active {
+    @apply bg-gold/20 text-gold-100;
+  }
+
   .mobile-menu {
     @apply border-t border-white/5;
     background: rgba(16, 16, 16, 0.96);

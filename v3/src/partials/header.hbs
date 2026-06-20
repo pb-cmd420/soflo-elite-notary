@@ -18,13 +18,17 @@
       </a>
 
       <div class="hidden items-center gap-7 lg:flex">
-        <a href="/services/" class="nav-link {{#if (eq page 'services')}}is-active{{/if}}">Services</a>
-        <a href="/fees/" class="nav-link {{#if (eq page 'fees')}}is-active{{/if}}">Fees</a>
-        <a href="/service-areas/" class="nav-link {{#if (eq page 'areas')}}is-active{{/if}}">Service Area</a>
-        <a href="/faq/" class="nav-link {{#if (eq page 'faq')}}is-active{{/if}}">FAQ</a>
-        <a href="/about/" class="nav-link {{#if (eq page 'about')}}is-active{{/if}}">About</a>
+        <a href="/services/" class="nav-link {{#if (eq page 'services')}}is-active{{/if}}" data-es="Servicios">Services</a>
+        <a href="/fees/" class="nav-link {{#if (eq page 'fees')}}is-active{{/if}}" data-es="Tarifas">Fees</a>
+        <a href="/service-areas/" class="nav-link {{#if (eq page 'areas')}}is-active{{/if}}" data-es="Zona de Servicio">Service Area</a>
+        <a href="/faq/" class="nav-link {{#if (eq page 'faq')}}is-active{{/if}}" data-es="Preguntas">FAQ</a>
+        <a href="/about/" class="nav-link {{#if (eq page 'about')}}is-active{{/if}}" data-es="Nosotros">About</a>
+        <div class="lang-switch" role="group" aria-label="Language — Idioma">
+          <button type="button" class="lang-btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="es" aria-pressed="false">ES</button>
+        </div>
         <a href="/#booking" class="btn btn-gold btn-sm">
-          Book a Signing
+          <span data-es="Reserve una Firma">Book a Signing</span>
           <svg viewBox="0 0 24 24" class="icon-sm" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
         </a>
       </div>
@@ -36,12 +40,16 @@
 
     <div id="mobile-menu" class="mobile-menu lg:hidden" data-mobile-menu hidden>
       <div class="mx-auto flex max-w-content flex-col gap-1 px-5 pb-5 pt-1 sm:px-8">
-        <a href="/services/" class="mobile-link" data-mobile-link>Services</a>
-        <a href="/fees/" class="mobile-link" data-mobile-link>Fees</a>
-        <a href="/service-areas/" class="mobile-link" data-mobile-link>Service Area</a>
-        <a href="/faq/" class="mobile-link" data-mobile-link>FAQ</a>
-        <a href="/about/" class="mobile-link" data-mobile-link>About</a>
-        <a href="/#booking" class="btn btn-gold mt-2 w-full justify-center" data-mobile-link>Book a Signing</a>
+        <a href="/services/" class="mobile-link" data-mobile-link data-es="Servicios">Services</a>
+        <a href="/fees/" class="mobile-link" data-mobile-link data-es="Tarifas">Fees</a>
+        <a href="/service-areas/" class="mobile-link" data-mobile-link data-es="Zona de Servicio">Service Area</a>
+        <a href="/faq/" class="mobile-link" data-mobile-link data-es="Preguntas">FAQ</a>
+        <a href="/about/" class="mobile-link" data-mobile-link data-es="Nosotros">About</a>
+        <div class="lang-switch mt-3 self-start" role="group" aria-label="Language — Idioma">
+          <button type="button" class="lang-btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="es" aria-pressed="false">ES</button>
+        </div>
+        <a href="/#booking" class="btn btn-gold mt-3 w-full justify-center" data-mobile-link data-es="Reserve una Firma">Book a Signing</a>
       </div>
     </div>
   </nav>

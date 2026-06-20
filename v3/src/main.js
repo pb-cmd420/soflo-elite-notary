@@ -10,6 +10,7 @@ import './styles/main.css';
 import { initNav } from './modules/nav.js';
 import { initReveal } from './modules/reveal.js';
 import { initBookingForm } from './modules/form.js';
+import { initI18n } from './modules/i18n.js';
 
 /** Run a callback as soon as the DOM is parsed. */
 function onReady(fn) {
@@ -21,6 +22,7 @@ function onReady(fn) {
 }
 
 onReady(() => {
+  initI18n();
   initNav();
   initReveal();
   initBookingForm();
