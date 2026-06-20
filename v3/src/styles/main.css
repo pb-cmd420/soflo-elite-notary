@@ -455,6 +455,46 @@
     @apply mt-4 flex items-start gap-2 text-xs leading-relaxed text-offwhite-dim;
   }
 
+  /* ---- Thank-you modal ---- */
+  .thankyou-modal {
+    @apply m-auto w-[calc(100%-2rem)] max-w-md rounded-3xl border border-gold/30 bg-charcoal-900 p-0 text-offwhite;
+    box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(184, 150, 62, 0.15);
+  }
+  .thankyou-modal::backdrop {
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .thankyou-modal[open] {
+    animation: thankyou-pop 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .thankyou-card {
+    @apply flex flex-col items-center gap-4 px-7 py-9 text-center sm:px-9;
+  }
+  .thankyou-icon {
+    @apply grid h-16 w-16 place-items-center rounded-full border border-gold/40 bg-gold/10 text-gold-300;
+  }
+  .thankyou-icon svg {
+    @apply h-8 w-8;
+  }
+  .thankyou-title {
+    @apply font-display text-2xl font-semibold text-offwhite;
+  }
+  .thankyou-body {
+    @apply max-w-sm text-sm leading-relaxed text-offwhite-muted;
+  }
+
+  @keyframes thankyou-pop {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
   /* honeypot — visually + a11y hidden, still in DOM for bots */
   .hp {
     position: absolute !important;

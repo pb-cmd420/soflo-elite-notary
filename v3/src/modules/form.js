@@ -52,6 +52,16 @@ export function initBookingForm() {
   const submitLabel = form.querySelector('[data-submit-label]');
   const renderedAt = Date.now();
 
+  // Wire the thank-you modal's dismiss controls once.
+  const modal = document.getElementById('thankyou-modal');
+  if (modal) {
+    const closeBtn = modal.querySelector('[data-thankyou-close]');
+    if (closeBtn) closeBtn.addEventListener('click', () => modal.close());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close(); // click on backdrop
+    });
+  }
+
   // Clear a field's error state as the user corrects it.
   FIELD_NAMES.forEach((name) => {
     const input = form.elements[name];
@@ -151,6 +161,7 @@ export function initBookingForm() {
         'success',
         'Thank you — your request was received. We will confirm your appointment and quote shortly, typically the same day.',
       );
+      showThankYouModal();
     } catch (_) {
       // Resilient fallback: never lose the lead.
       const mailto = buildMailto(getContactEmail(), data);
@@ -231,6 +242,28 @@ function fakeSuccess(form, statusEl) {
   clearAllErrors(form);
   form.reset();
   setStatus(statusEl, 'success', 'Thank you — your request was received. We will be in touch shortly.');
+  showThankYouModal();
+}
+
+// True when the page (or, if the page declares no language, the visitor's
+// browser) is Spanish. Drives the "Gracias" vs "Thank you" copy.
+function isSpanish() {
+  const pageLang = (document.documentElement.lang || '').toLowerCase();
+  if (pageLang.startsWith('es')) return true;
+  if (pageLang.startsWith('en')) return false;
+  return (navigator.language || '').toLowerCase().startsWith('es');
+}
+
+// Populate the modal with the right language and open it.
+function showThankYouModal() {
+  const modal = document.getElementById('thankyou-modal');
+  if (!modal || typeof modal.showModal !== 'function') return;
+  const lang = isSpanish() ? 'es' : 'en';
+  modal.querySelectorAll(`[data-${lang}]`).forEach((el) => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text != null) el.textContent = text;
+  });
+  if (!modal.open) modal.showModal();
 }
 
 function buildMailto(email, data) {

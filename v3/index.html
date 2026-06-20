@@ -387,6 +387,20 @@
       </section>
     </main>
 
+    <!-- Thank-you confirmation modal (shown after a successful booking submit) -->
+    <dialog id="thankyou-modal" class="thankyou-modal" aria-labelledby="thankyou-title" aria-describedby="thankyou-body">
+      <div class="thankyou-card">
+        <span class="thankyou-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h2 id="thankyou-title" class="thankyou-title" data-en="Thank you!" data-es="¡Gracias!">Thank you!</h2>
+        <p id="thankyou-body" class="thankyou-body"
+           data-en="Your request was received. We'll confirm your appointment and quote shortly — typically the same day."
+           data-es="Recibimos su solicitud. Le confirmaremos su cita y presupuesto en breve — normalmente el mismo día.">Your request was received. We'll confirm your appointment and quote shortly — typically the same day.</p>
+        <button type="button" class="btn btn-gold mt-2" data-thankyou-close data-en="Close" data-es="Cerrar">Close</button>
+      </div>
+    </dialog>
+
     {{> footer}}
   </body>
 </html>
