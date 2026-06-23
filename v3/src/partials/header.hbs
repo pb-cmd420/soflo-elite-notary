@@ -40,11 +40,11 @@
 
     <div id="mobile-menu" class="mobile-menu lg:hidden" data-mobile-menu hidden>
       <div class="mx-auto flex max-w-content flex-col gap-1 px-5 pb-5 pt-1 sm:px-8">
-        <a href="/services/" class="mobile-link" data-mobile-link data-es="Servicios">Services</a>
-        <a href="/fees/" class="mobile-link" data-mobile-link data-es="Tarifas">Fees</a>
-        <a href="/service-areas/" class="mobile-link" data-mobile-link data-es="Zona de Servicio">Service Area</a>
-        <a href="/faq/" class="mobile-link" data-mobile-link data-es="Preguntas">FAQ</a>
-        <a href="/about/" class="mobile-link" data-mobile-link data-es="Nosotros">About</a>
+        <a href="/services/" class="mobile-link {{#if (eq page 'services')}}is-active{{/if}}" data-mobile-link data-es="Servicios">Services</a>
+        <a href="/fees/" class="mobile-link {{#if (eq page 'fees')}}is-active{{/if}}" data-mobile-link data-es="Tarifas">Fees</a>
+        <a href="/service-areas/" class="mobile-link {{#if (eq page 'areas')}}is-active{{/if}}" data-mobile-link data-es="Zona de Servicio">Service Area</a>
+        <a href="/faq/" class="mobile-link {{#if (eq page 'faq')}}is-active{{/if}}" data-mobile-link data-es="Preguntas">FAQ</a>
+        <a href="/about/" class="mobile-link {{#if (eq page 'about')}}is-active{{/if}}" data-mobile-link data-es="Nosotros">About</a>
         <div class="lang-switch mt-3 self-start" role="group" aria-label="Language — Idioma">
           <button type="button" class="lang-btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
           <button type="button" class="lang-btn" data-lang-btn="es" aria-pressed="false">ES</button>

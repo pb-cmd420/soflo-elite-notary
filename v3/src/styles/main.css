@@ -130,6 +130,9 @@
   .mobile-link {
     @apply rounded-lg px-3 py-3 text-base font-medium text-offwhite-muted transition hover:bg-white/5 hover:text-offwhite;
   }
+  .mobile-link.is-active {
+    @apply border-l-2 border-gold-500 bg-gold/10 pl-[0.625rem] text-gold-100;
+  }
 
   /* ---- Buttons ---- */
   .btn {
@@ -189,6 +192,11 @@
 
   .section {
     @apply relative border-t border-white/5 py-20 sm:py-28;
+  }
+  /* The first section on a page acts as its hero — drop the top hairline so it
+     doesn't double up with the sticky nav's border flush beneath it. */
+  main > .section:first-child {
+    @apply border-t-0;
   }
   .section-alt {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
