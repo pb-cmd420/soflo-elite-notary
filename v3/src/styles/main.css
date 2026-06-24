@@ -361,7 +361,7 @@
     @apply relative rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
   }
   .step-num {
-    @apply font-mono text-sm font-semibold text-gold-400;
+    @apply block h-px w-8 bg-gradient-to-r from-gold-500 to-transparent;
   }
   .step-title {
     @apply mt-3 font-display text-lg font-semibold text-offwhite;
@@ -667,7 +667,7 @@
 
   /* ---- Services full-list cards ---- */
   .svc-list-card {
-    @apply rounded-2xl border border-white/10 bg-charcoal-800/50 p-7;
+    @apply rounded-2xl border border-white/10 bg-charcoal-800/50 p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/30 hover:shadow-vault;
   }
   .svc-list-title {
     @apply font-display text-lg font-semibold text-offwhite;
