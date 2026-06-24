@@ -233,7 +233,7 @@
     @apply text-[0.66rem] font-semibold uppercase tracking-label text-offwhite-dim;
   }
   .stat-value {
-    @apply mt-1 font-display text-3xl font-semibold tabular-nums text-offwhite;
+    @apply mt-1 font-display text-2xl sm:text-3xl font-semibold tabular-nums text-offwhite;
   }
   .stat-unit {
     @apply ml-1 text-sm font-sans font-medium text-gold-300;
@@ -338,14 +338,19 @@
     @apply mt-2 text-sm leading-relaxed text-offwhite-muted;
   }
   .svc-detail {
-    @apply mt-0 grid max-h-0 gap-1.5 overflow-hidden text-sm text-offwhite-dim opacity-0 transition-all duration-500;
+    @apply mt-5 grid gap-1.5 overflow-hidden text-sm text-offwhite-dim;
   }
   .svc-detail li {
     @apply flex items-center gap-2 before:inline-block before:h-1 before:w-1 before:rounded-full before:bg-gold-400;
   }
-  .svc-card:hover .svc-detail,
-  .svc-card:focus-within .svc-detail {
-    @apply mt-5 max-h-60 opacity-100;
+  @media (min-width: 768px) {
+    .svc-detail {
+      @apply mt-0 max-h-0 opacity-0 transition-all duration-300 ease-out;
+    }
+    .svc-card:hover .svc-detail,
+    .svc-card:focus-within .svc-detail {
+      @apply mt-5 max-h-60 opacity-100;
+    }
   }
   .svc-card-cta {
     @apply border-gold/30 bg-gradient-to-br from-gold/[0.08] to-crimson-500/[0.05];
