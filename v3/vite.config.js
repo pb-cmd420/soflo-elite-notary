@@ -13,7 +13,7 @@ const SITE = 'https://sofloelitenotary.com';
 const PAGES = {
   '/index.html': {
     page: 'home',
-    title: 'SoFlo Elite Notary & Business Services | Mobile Notary — Miami-Dade & Broward',
+    title: 'SoFlo Elite Notary & Business Services LLC | Mobile Notary — Miami-Dade & Broward',
     description:
       'Banking-grade mobile notary for South Florida, led by a 19-year banking veteran. Real estate & loan signings, corporate documents, estate planning, and general notarization. We come to you across Miami-Dade & Broward.',
     canonical: SITE + '/',
@@ -50,7 +50,7 @@ const PAGES = {
     page: 'about',
     title: 'About & Founder — Pedro “Pete” Quintero | SoFlo Elite Notary',
     description:
-      'Meet founder Pedro “Pete” Quintero — 19+ years in banking and 7+ years a Florida notary. The banking-grade standard behind SoFlo Elite Notary & Business Services.',
+      'Meet founder Pedro “Pete” Quintero — 19+ years in banking and 7+ years a Florida notary. The banking-grade standard behind SoFlo Elite Notary & Business Services LLC.',
     canonical: SITE + '/about/',
   },
   '/legal/index.html': {
