@@ -3,9 +3,63 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Professional Florida Notary Public offering mobile notary services, wedding officiation, real estate closings, and more across South Florida.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://soflo-elite-notary.netlify.app/">
+  <meta property="og:title" content="SoFlo Notary | Mobile Notary Services in South Florida">
+  <meta property="og:description" content="Professional Florida Notary Public serving Miami-Dade and Broward counties. Mobile notary, real estate closings, wedding officiant, estate planning, and more.">
+  <meta property="og:image" content="https://soflo-elite-notary.netlify.app/hero-logo.jpg">
+  <meta property="og:image:width" content="420">
+  <meta property="og:image:height" content="159">
+  <meta property="og:site_name" content="SoFlo Notary">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SoFlo Notary | Mobile Notary Services in South Florida">
+  <meta name="twitter:description" content="Professional Florida Notary Public serving Miami-Dade and Broward counties. Mobile notary, real estate closings, wedding officiant, estate planning, and more.">
+  <meta name="twitter:image" content="https://soflo-elite-notary.netlify.app/hero-logo.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://soflo-elite-notary.netlify.app/">
   <title>SoFlo Notary | Mobile Notary Services in South Florida</title>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
   <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SoFlo Notary",
+  "description": "Professional Florida Notary Public offering mobile notary services, real estate closings, wedding officiation, and estate planning across South Florida.",
+  "url": "https://soflo-elite-notary.netlify.app/",
+  "telephone": "+17866340070",
+  "email": "SOFLOELITENOTARY@proton.me",
+  "image": "https://soflo-elite-notary.netlify.app/hero-logo.jpg",
+  "logo": "https://soflo-elite-notary.netlify.app/soflologo.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Miami-Dade County"},
+    {"@type": "AdministrativeArea", "name": "Broward County"},
+    {"@type": "City", "name": "Miami"},
+    {"@type": "City", "name": "Miami Beach"},
+    {"@type": "City", "name": "Coral Gables"},
+    {"@type": "City", "name": "Hialeah"},
+    {"@type": "City", "name": "Fort Lauderdale"},
+    {"@type": "City", "name": "Hollywood"},
+    {"@type": "City", "name": "Pembroke Pines"}
+  ],
+  "serviceType": ["Mobile Notary", "Real Estate Notary", "Wedding Officiant", "Estate Planning Notary", "Business Document Notary"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "20:00"
+  }],
+  "sameAs": []
+}
+</script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -110,6 +164,21 @@
 </footer>
 
 <button class="chat-btn" aria-label="Chat with us"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></button>
+
+<!-- Chatbot Panel -->
+<div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Notary FAQ Assistant">
+  <div class="chatbot-header">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <h4>Notary FAQ Assistant</h4>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+  <div class="chatbot-quick" id="chatbot-quick"></div>
+  <div class="chatbot-input-area">
+    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask about fees, services, appointments..." aria-label="Type your question">
+    <button class="chatbot-send" id="chatbot-send" aria-label="Send">Send</button>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

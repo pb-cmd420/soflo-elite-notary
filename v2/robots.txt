@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soflo-elite-notary.netlify.app/sitemap.xml

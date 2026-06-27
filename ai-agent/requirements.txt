@@ -1,0 +1,12 @@
+# AI Notary Agent — SMS & Email
+# Install: pip install -r requirements.txt
+# Configure: edit .env with your credentials
+# Run: python agent.py
+
+flask>=3.0
+twilio>=9.0
+openai>=1.30
+python-dotenv>=1.0
+imapclient>=2.3
+pyzmail>=1.6
+schedule>=1.2
